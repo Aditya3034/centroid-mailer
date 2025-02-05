@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 // Define recipients
 const recipients = {
     primary: 'aditya3034@gmail.com',
-    others: ['r.k.prajapati0307@gmail.com']
+    others: ['']
 };
 
 // Function to send email with HTML template
