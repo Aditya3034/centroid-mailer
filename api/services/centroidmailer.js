@@ -82,7 +82,7 @@ const centroidMailer = async ({ name, course, mobile, comment, checkbox }) => {
                         <div>
                             <div style="color: #64748b; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Email Preference</div>
                             <div style="color: #1e293b; font-size: 16px; font-weight: 500; padding: 8px 12px; background-color: #ffffff; border-radius: 6px; border-left: 4px solid ${checkbox ? '#f87171' : '#34d399'};">
-                                ${checkbox ? 'Unsubscribed from emails' : 'Subscribed to emails'}
+                                ${checkbox == "Yes"? 'Subscribed to emails' : 'Unsubscribed from emails'}
                             </div>
                         </div>
                     </div>
