@@ -4,10 +4,8 @@ const express = require("express");
 require("dotenv").config();
 const cors = require('cors');
 const { centroidMailer } = require("./api/services/centroidmailer");
-const { sendContactEmail } = require("./api/services/emailService");
 
 const fileUpload = require('express-fileupload');
-const { scrapeGoogleReviews } = require('./api/services/scrapeReviews'); // Import the scrape function
 const app = express();
 
 // Allow all origins for CORS
