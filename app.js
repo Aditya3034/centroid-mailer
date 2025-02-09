@@ -3,7 +3,7 @@
 const express = require("express");
 require("dotenv").config();
 const cors = require('cors');
-const { centroidMailer } = require("./api/services/centroidmailer");
+const { centroidMailer, processEnquiryEmail } = require("./api/services/centroidmailer");
 
 const fileUpload = require('express-fileupload');
 const app = express();
@@ -50,8 +50,15 @@ app.post("/api/centroid/contact", async (req, res) => {
     res.status(500).send(`Error sending email: ${error.message}`);
   }
 });
-// Google Reviews route
-
+// New API route for processing enquiries
+app.post("/api/centroid/enquiry", async (req, res) => {
+  try {
+    const result = await processEnquiryEmail(req.body);
+    res.status(result.success ? 200 : 500).send(result.response);
+  } catch (error) {
+    res.status(500).send(`Error sending email: ${error.message}`);
+  }
+});
 
 // A fallback route to handle any other GET requests
 app.get('*', (req, res) => {
