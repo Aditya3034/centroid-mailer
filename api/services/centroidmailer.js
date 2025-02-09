@@ -219,8 +219,8 @@ const centroidMailer = async ({ name, course, mobile, comment, checkbox }) => {
     return sendEmail("Centroid - Online Website Enquiry", emailTemplate);
 };
 
-const processEnquiryEmail = async ({ name, email, phoneNumber, language, course, standard, school, query }) => {
-    const emailTemplate = generateEmailTemplate({ name, email, phoneNumber, language, course, standard, school, query });
+const processEnquiryEmail = async ({ name, email, phoneNumber, course, standard, school, query }) => {
+    const emailTemplate = generateEmailTemplate({ name, email, phoneNumber, course, standard, school, query });
     return sendEmail("Centroid - Student Enquiry", emailTemplate);
 };
 
